@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<br>
+		<br>
+		<br>
+			<h1 align="center">こんにちわ！!ログインしてください</h1>
+			<br>
+			<br>
+			<br>
+				<div align="center">
+					<p th:text="${msg}">${msg}</p> 
+						<form method="POST" action="send">
+							<input type="text" name="text1" th:value="${value}" />
+							<input type="submit" value="login" />
+						</form>
+				</div>
+	</body>
+
+</html>

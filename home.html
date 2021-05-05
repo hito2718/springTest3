@@ -1,0 +1,36 @@
+<html>
+<body>
+	<h1>Hello!</h1>
+	<p th:text="${msg}">${msg}</p> 
+	<form method="POST" action="send">
+		<input type="text" name="text1" th:value="${value}" />
+		<input type="submit" value="Click" />
+	</form>
+
+<a th:href="@{/insert}">データ登録</a>
+
+	<table  border="1" align="center">
+		<tr style="background-color:#EDF7FF;">
+
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HIGH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OPEN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	CLOSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VOLUME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADJCLOSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		</tr>
+
+			<tr align="center" th:each="obj : ${object}">
+				<td style="background-color:beige" th:text="${obj.date}"></td>
+				<td style="background-color:beige" th:text="${obj.high}"></td>
+				<td style="background-color:beige" th:text="${obj.low}"></td>
+				<td style="background-color:beige" th:text="${obj.open}"></td>
+				<td style="background-color:beige" th:text="${obj.close}"></td>
+				<td style="background-color:beige" th:text="${obj.volume}"></td>
+				<td style="background-color:beige" th:text="${obj.adjclose}"></td>
+			</tr>
+	</table> 
+
+</body>
+</html>

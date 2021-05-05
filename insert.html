@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>データ登録</title>
+</head>
+<body>
+    <h1>データ登録</h1>
+
+    <!-- ポイント1 -->
+    <form th:action="@{/insert}" th:object="${customerForm}" method="post">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <!-- ポイント2 -->
+                <td><input type="text" name="date" th:field="*{date}"></td>
+            </tr>
+            <tr>
+                <th>HIGH</th>
+                <td><input type="text" name="high" th:field="*{high}"></td>
+            </tr>
+            <tr>
+                <th>LOW</th>
+                <td><input type="text" name="low" th:field="*{low}"></td>
+            </tr>
+            <tr>
+                <th>OPEN</th>
+                <td><input type="text" name="open" th:field="*{open}"></td>
+            </tr>
+            <tr>
+                <th>CLOSE</th>
+                <td><input type="text" name="close" th:field="*{close}"></td>
+            </tr>
+            <tr>
+                <th>VOLUME</th>
+                <td><input type="text" name="volume" th:field="*{volume}"></td>
+            </tr>
+            <tr>
+                <th>ADJCLOSE</th>
+                <td><input type="text" name="adjclose" th:field="*{adjclose}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="登録">
+    </form>
+
+</body>
+</html>
